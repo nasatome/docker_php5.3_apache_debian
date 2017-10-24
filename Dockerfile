@@ -64,6 +64,7 @@ RUN set -x \
 	&& apt-get purge -y --auto-remove autoconf2.13
 
 RUN git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it && ~/.bash_it/install.sh \
+&& mkdir -p ~/.bash_it/plugins/enabled/ \
 && ln -s ~/.bash_it/plugins/available/history.plugin.bash ~/.bash_it/plugins/enabled/250---history.plugin.bash \
 && apt-get purge -y --auto-remove git
 
